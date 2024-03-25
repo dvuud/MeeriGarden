@@ -1,0 +1,64 @@
+{% extends 'include/homepage.html' %}
+{% load static %}
+{% block content %}
+
+{% include 'include/header.html' %}
+    <!-- Header Banner -->
+    <div class="banner-header section-padding valign bg-img bg-fixed" data-overlay-dark="3"
+        data-background="{% static 'img/merrigarden/banner/1.jpg' %}">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-left caption mt-90">
+                    <h5>MerriGarden</h5>
+                    <h1>Наши Контакты</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Contact -->
+    <section class="contact section-padding">
+        <div class="container">
+            <div class="row mb-90">
+                <div class="col-md-6 mb-60">
+                    <h3>{{contact.title}}</h3>
+                    <p>{{contact.description}}</p>
+                    <div class="reservations mb-30">
+                        <div class="icon"><span class="flaticon-call"></span></div>
+                        <div class="text">
+                            <p>Забронировать</p> <a href="{{contact.phone}}">{{contact.phone}}</a>
+                        </div>
+                    </div>
+                    <div class="reservations mb-30">
+                        <div class="icon"><span class="flaticon-envelope"></span></div>
+                        <div class="text">
+                            <p>Email</p> <a href="{{contact.email}}">{{contact.email}}</a>
+                        </div>
+                    </div>
+                    <div class="reservations">
+                        <div class="icon"><span class="flaticon-location-pin"></span></div>
+                        <div class="text">
+                            <p>Адрес</p> Адрес
+                            <br>{{contact.adress}}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5 mb-30 offset-md-1">
+                    <h3>Свяжитесь с нами</h3>
+                    <form method="post" class="contact__form"
+                        action="">
+                        <!-- form message -->
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="alert alert-success contact__msg" style="display: none" role="alert"> Your
+                                    message was sent successfully. </div>
+                            </div>
+                        </div>
+            <!-- Map Section -->
+            <div class="row">
+                <div class="col-md-12 map animate-box" data-animate-effect="fadeInUp">
+                </div>
+            </div>
+        </div>
+    </section>
+{% include 'include/footer.html'%}
+{%endblock%}

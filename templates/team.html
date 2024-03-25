@@ -1,0 +1,43 @@
+{% extends 'include/homepage.html' %}
+{% load static %}
+{% block content %}
+
+{% include 'include/header.html' %}
+    <!-- Header Banner -->
+    <div class="banner-header section-padding valign bg-img bg-fixed" data-overlay-dark="4" data-background="{% static 'img/merrigarden/banner/1.jpg' %}">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 caption mt-90">
+                    <h5>MerriGarden</h5>
+                    <h1>Команда</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Team -->
+    <section class="team section-padding bg-cream">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="item">
+                        {%for commands in commands%}
+                        <div class="img"> <img src="{{commands.img.url}}" alt=""> </div>
+                        <div class="info">
+                            <h6>{{commands.title}}</h6>
+                            <p>{{commands.job}}</p>
+                            <div class="social valign">
+                                <div class="full-width"> 
+                                   <a href="{{commands.instagram}}"><i class="ti-instagram"></i></a> 
+                                   <a href="{{commands.github}}"><i class="ti-github"></i></a> 
+                                   <a href="{{commnds.facebook}}"><i class="ti-facebook"></i></a> 
+                                   <p>{{commands.email}}</p>
+                                   {%endfor%}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </section>
+
+{% include 'include/footer.html'%}
+{%endblock%}

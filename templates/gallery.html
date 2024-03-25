@@ -1,0 +1,37 @@
+{% extends 'include/homepage.html' %}
+{% load static %}
+{% block content %}
+
+{% include 'include/header.html' %}
+    <!-- Header Banner -->
+    <div class="banner-header section-padding valign bg-img bg-fixed" data-overlay-dark="4" data-background="{% static 'img/merrigarden/banner/1.jpg' %}">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 caption mt-90">
+                    <h5>MerriGarden</h5>
+                    <h1>Галерея</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Image Gallery -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="section-subtitle">MerriGarden</div>
+                    <div class="section-title">Галерея</div>
+                </div>
+                <!-- 3 columns -->
+                {%for gallery in gallery%}
+                <div class="col-md-4 gallery-item">
+                    <a href="{{gallery.img.url}}" title="" class="img-zoom">
+                        <div class="gallery-box">
+                            <div class="gallery-img"> <img src="{{gallery.img.url}}" class="img-fluid mx-auto d-block" alt="work-img"> </div>
+                            {%endfor%}
+                        </div>
+                    </a>
+                </div>
+        </section>
+{% include 'include/footer.html'%}
+{%endblock%}

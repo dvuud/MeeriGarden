@@ -1,0 +1,64 @@
+{% extends 'include/homepage.html' %}
+{% load static %}
+{% block content %}
+
+{% include 'include/header.html' %}
+    <!-- Header Banner -->
+    <div class="banner-header section-padding valign bg-img bg-fixed" data-overlay-dark="4" data-background="{% static 'img/merrigarden/banner/1.jpg' %}">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 caption mt-90">
+                    <h5>MerriGarden</h5>
+                    <h1>О нас</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About -->
+    <section class="about section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 mb-30 animate-box" data-animate-effect="fadeInUp">
+                    <div class="section-subtitle">MerriGarden</div>
+                    <div class="section-title">{{about.title}}</div>
+                    <p>{{about.description|truncatechars:9}}</p>
+                    <!-- call -->
+                    <div class="reservations">
+                        <div class="icon"><span class="flaticon-call"></span></div>
+                        <div class="text">
+                            <p>Забронировать</p> <a href="{{about.phone}}">{{about.phone}}</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col col-md-3 animate-box" data-animate-effect="fadeInUp">
+                    <img src="{{about.img.url}}" alt="" class="mt-90 mb-30 br-20">
+                </div>
+                <div class="col col-md-3 animate-box" data-animate-effect="fadeInUp">
+                    <img src="{{about.img2.url}}" alt="" class="br-20">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Facilties -->
+    <section class="facilties pt-60">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="section-subtitle">MerriGarden</div>
+                    <div class="section-title">Услуги</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    {%for uslugi in uslugi%}
+                    <div class="single-facility animate-box br-20" data-animate-effect="fadeInUp">
+                        <span class="flaticon-world"></span>
+                        <h5>{{uslugi.title}}</h5>
+                        <p>{{uslugi.description}}</p>
+                        <div class="facility-shape"> <span class="flaticon-world"></span> </div>
+                        {%endfor%}
+                    </div>
+                </div>
+    </section>
+{% include 'include/footer.html'%}
+{%endblock%}
