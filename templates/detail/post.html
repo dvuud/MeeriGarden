@@ -14,27 +14,22 @@
             </div>
         </div>
     </div>
-    <!-- Post -->
-    <section class="section-padding">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12"> 
-                    <img src="{{news.img.url}}" class="mb-30" alt="">
-                    <h2>{{news.title}}</h2>
-                    <p>{{news.description}}</p>
-                    <blockquote>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <img src="img/merrigarden/news/2.jpg" class="mb-30" alt="">
-                        </div>
-                        <div class="col-md-6">
-                            <img src="img/merrigarden/news/4.jpg" class="mb-30" alt="">
-                        </div>
-                    </div>
-                </div>
+
+<!-- Post -->
+<section class="section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12"> 
+                <img src="{{news_item.img.url}}" class="mb-30" alt="">
+                <h2>{{news_item.title}}</h2>
+                <p>{{news_item.description}}</p>
+                <blockquote>
+                    <p>{{news_item.description|truncatewords:50}}</p>
+                </blockquote>
             </div>
         </div>
-    </section>
+    </div>
+</section>
     <!-- Footer -->
 {% include 'include/footer.html'%}
 {%endblock%}

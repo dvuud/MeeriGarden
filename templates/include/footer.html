@@ -10,7 +10,7 @@
                     <div class="reservations mb-30">
                         <div class="icon color-1"><span class="flaticon-call"></span></div>
                         <div class="text">
-                            <p class="color-1">Забронировать</p> <a class="color-1" href="tel:{{footer.phone}}">{{FOOTER.phone}}</a>
+                            <p class="color-1">Забронировать</p> <a class="color-1" href="tel:{{footer.phone}}">{{footer.phone}}</a>
                         </div>
                     </div>
                     <p><i class="ti-check"></i><small>Позвоните нам</small></p>
@@ -19,7 +19,7 @@
                 <div class="col-md-5 offset-md-2">
                     <div class="booking-box">
                         <div class="head-box">
-                            <h6>{{footer}}</h6>
+                            <h6>Merry Garden</h6>
                             <h4>Забронировать</h4>
                         </div>
                         <div class="booking-inner clearfix">
@@ -101,6 +101,7 @@
                             <li><a href="{% url 'index_url' %}">Главная</a></li>
                             <li><a href="{% url 'about_url' %}">О нас</a></li>
                             <li><a href="{% url 'team_url' %}">Команда</a></li>
+                            <li><a href="{% url 'news_url' %}">Новости</a></li>
                             <li><a href="{% url 'gallery_url' %}">Галерея</a></li>
                             <li><a href="{% url 'contact_url' %}">Контакты</a></li>
                         </ul>

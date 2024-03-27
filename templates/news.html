@@ -3,31 +3,44 @@
 {% block content %}
 
 {% include 'include/header.html' %}
-    <!-- Rooms -->
-    <section class="rooms1 section-padding bg-cream" data-scroll-index="1">
+    <!-- Header Banner -->
+    <div class="banner-header section-padding valign bg-img bg-fixed" data-overlay-dark="4" data-background="{% static 'img/merrigarden/banner/1.jpg' %}">
         <div class="container">
             <div class="row">
-                <div class="col-md-4">
-                    <div class="item br-20">
-                        <div class="position-re o-hidden"><img src="{% static 'img/merrigarden/news/1.jpg' %}" alt=""></div>
-                        <div class="con">
-                            <h5><a href="#">{{news.title}}</a> </h5>
-                            <div class="line"></div>
-                            <div class="row facilities">
-                                <div class="col col-md-5 text-end">
-                                    <div class="permalink">
-                                        <a href="#">
-                                            Подробнее<i class="ti-arrow-right"></i>
-                                        </a>
-                                    </div>
+                <div class="col-md-12 text-left caption mt-90">
+                    <h5>MerriGarden</h5>
+                    <h1>Новости</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Rooms -->
+<section class="rooms1 section-padding bg-cream" data-scroll-index="1">
+    <div class="container">
+        <div class="row">
+            {% for news_item in news %}
+            <div class="col-md-4">
+                <div class="item br-20">
+                    <div class="position-re o-hidden"><img src="{{news_item.img.url}}" alt="Merry Garden"></div>
+                    <div class="con">
+                        <h5><a href="{% url 'news_detail' news_item.id %}">{{news_item.title}}</a></h5>
+                        <div class="line"></div>
+                        <div class="row facilities">
+                            <div class="col col-md-5 text-end">
+                                <div class="permalink">
+                                    <a href="{% url 'news_detail' news_item.id %}">
+                                        Подробнее <i class="ti-arrow-right"></i>
+                                    </a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-    </section>
-
-{% include 'include/footer.html' %} 
-    
-
-{% endblock %}  
+            </div>
+            {% endfor %}
+            
+        </div>
+    </div>
+</section>
+{% include 'include/footer.html'%}
+{% endblock %}

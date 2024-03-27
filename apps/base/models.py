@@ -131,7 +131,7 @@ class Gallery(models.Model):
         verbose_name = 'Галерея'
         verbose_name_plural = 'Галереи'
     
-class News(models.Model):
+class News_item(models.Model):
     img = models.ImageField(
         verbose_name='Фото',
         upload_to = 'media'
@@ -207,6 +207,7 @@ class Post(models.Model):
         verbose_name_plural = 'Заявки'
 
 class Banner(models.Model):
+    
     title = models.CharField(
     max_length=255,
     verbose_name='Заголовок'

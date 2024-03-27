@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from apps.base.models import *
 from django.http import HttpResponse
 
@@ -6,6 +6,7 @@ from django.http import HttpResponse
 # Create your views here.
 def index(request):
     banner = Banner.objects.all()
+    footer = Footer.objects.latest("id")
     facilties = Facilties.objects.all()
     services = Services.objects.all()
     if request.method == 'POST':
@@ -19,6 +20,7 @@ def index(request):
 
 def about_us(request):
     uslugi = Uslugi.objects.all()
+    footer = Footer.objects.latest("id")
     about = About.objects.latest("id")
     command = Command.objects.all()
     if request.method == 'POST':
@@ -30,7 +32,20 @@ def about_us(request):
         result = Post.objects.create(fullname=fullname, phone=phone, date=date, adults=adults, childs=childs)
     return render(request, 'about.html', locals())
 
+def news(request):
+    footer = Footer.objects.latest("id")
+    news = News.objects.all()
+    if request.method =="POST":
+        fullname = request.POST.get("fullname")
+        phone = request.POST.get("phone")
+        date = request.POST.get("date")
+        adults = request.POST.get("adults")
+        childs = request.POST.get("childs")
+        result = Post.objects.create(fullname=fullname, phone=phone, date=date, adults=adults, childs=childs)
+    return render(request, 'news2.html', locals())
+
 def team(request):
+    footer = Footer.objects.latest("id")
     commands = Commands.objects.all()
     if request.method == 'POST':
         fullname = request.POST.get("fullname")
@@ -41,8 +56,10 @@ def team(request):
         result = Post.objects.create(fullname=fullname, phone=phone, date=date, adults=adults, childs=childs)
     return render(request, 'team.html', locals())
 
-def post(request, id):
-    news = News.objects.get(id=id)
+def news_detail(request, id):
+    footer = Footer.objects.latest("id")
+    news = News_item.objects.latest("id")
+    news = News_item.objects.get(id=id)
     if request.method == 'POST':
         fullname = request.POST.get("fullname")
         phone = request.POST.get("phone")
@@ -53,7 +70,8 @@ def post(request, id):
     return render(request, 'detail/post.html', locals())
 
 def news(request):
-    news = News.objects.all()
+    footer = Footer.objects.latest("id")
+    news = News_item.objects.all()
     if request.method == 'POST':
         fullname = request.POST.get("fullname")
         phone = request.POST.get("phone")
@@ -63,8 +81,8 @@ def news(request):
         result = Post.objects.create(fullname=fullname, phone=phone, date=date, adults=adults, childs=childs)
     return render(request, 'news.html', locals())
 
-
 def gallery(request):
+    footer = Footer.objects.latest("id")
     gallery = Gallery.objects.all()
     if request.method == 'POST':
         fullname = request.POST.get("fullname")
@@ -76,6 +94,7 @@ def gallery(request):
     return render(request, 'gallery.html', locals())
 
 def contact(request):
+    footer = Footer.objects.latest("id")
     contact = Contact.objects.latest("id")
     if request.method == 'POST':
         fullname = request.POST.get("fullname")

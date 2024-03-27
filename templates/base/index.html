@@ -64,7 +64,7 @@
             <div class="row">
                 <div class="col-md-6 p-0 animate-box" data-animate-effect="fadeInLeft">
                     <div class="img left brl-20">
-                        <a href="#"><img src="{% static 'img/merrigarden/banner/1.jpg' %}" alt=""></a>
+                        <a href="#"><img src="{{banner.img.url}}" alt=""></a>
                     </div>
                 </div>
                 <div class="col-md-6 p-0 bg-cream valign animate-box brr-20" data-animate-effect="fadeInRight">
@@ -102,42 +102,6 @@
         </div>
     </div>
     </section>
-    <!-- Rooms -->
-    <section class="rooms1 section-padding bg-cream" data-scroll-index="1">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="section-subtitle">{{banner.title}}</div>
-                    <div class="section-title">Новости</div>
-                </div>
-            </div>
-            <div class="row">
-                {% for banner in banner%}
-                <div class="col-md-4">
-                    <div class="item br-20">
-                        <div class="position-re o-hidden"><img src="{{banner.img1.url}}" alt=""></div>
-                        <div class="con">
-                            <h5><a href="{% url 'post_url' %}">Новость {{banner.id}}</a> </h5>
-                            <div class="line"></div>
-                            <div class="row facilities">
-                                <div class="col col-md-5 text-end">
-                                    <div class="permalink">
-                                        <a href="{% url 'post_url' %}">
-                                            Подробнее<i class="ti-arrow-right"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                {% endfor %}
-            </div>
-        </div>
-    </section>
-    
-    <!-- Clients -->
-    <!-- Footer -->
 {% include 'include/footer.html' %} 
     
 
