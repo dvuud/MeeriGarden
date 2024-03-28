@@ -24,7 +24,10 @@ class About(models.Model):
         verbose_name='Фото',
         upload_to = 'media2'
     )
-
+    video = models.URLField(
+        verbose_name='Видео(YouTube)'
+    )
+    
     def __str__(self):
         return self.title
     class Meta:
@@ -208,9 +211,6 @@ class Post(models.Model):
         verbose_name_plural = 'Заявки'
 
 class Banner(models.Model):
-    video = models.URLField(
-    verbose_name='Видео(YouTube)'
-    )
     title = models.CharField(
     max_length=255,
     verbose_name='Заголовок'
