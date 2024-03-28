@@ -208,7 +208,9 @@ class Post(models.Model):
         verbose_name_plural = 'Заявки'
 
 class Banner(models.Model):
-    
+    video = models.URLField(
+    verbose_name='Видео(YouTube)'
+    )
     title = models.CharField(
     max_length=255,
     verbose_name='Заголовок'
