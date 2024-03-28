@@ -18,17 +18,17 @@
 <section class="rooms1 section-padding bg-cream" data-scroll-index="1">
     <div class="container">
         <div class="row">
-            {% for news_item in news %}
+             {% for news_item in news %}
             <div class="col-md-4">
                 <div class="item br-20">
                     <div class="position-re o-hidden"><img src="{{news_item.img.url}}" alt="Merry Garden"></div>
                     <div class="con">
-                        <h5><a href="{% url 'news_detail' news_item.id %}">{{news_item.title}}</a></h5>
+                        <h5><a href=" {% url 'news_detail' news_item.id %} ">{{news_item.title}}</a></h5>
                         <div class="line"></div>
                         <div class="row facilities">
                             <div class="col col-md-5 text-end">
                                 <div class="permalink">
-                                    <a href="{% url 'news_detail' news_item.id %}">
+                                    <a href=" {% url 'news_detail' news_item.id %} ">
                                         Подробнее <i class="ti-arrow-right"></i>
                                     </a>
                                 </div>
