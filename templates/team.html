@@ -20,8 +20,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
+            {%for commands in commands%}
                     <div class="item">
-                        {%for commands in commands%}
                         <div class="img"> <img src="{{commands.img.url}}" alt=""> </div>
                         <div class="info">
                             <h6>{{commands.title}}</h6>
@@ -32,11 +32,11 @@
                                    <a href="{{commands.github}}"><i class="ti-github"></i></a> 
                                    <a href="{{commnds.facebook}}"><i class="ti-facebook"></i></a> 
                                    <p>{{commands.email}}</p>
-                                   {%endfor%}
                                 </div>
                             </div>
                         </div>
                     </div>
+                    {%endfor%}
             </section>
 
 {% include 'include/footer.html'%}
