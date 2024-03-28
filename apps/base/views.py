@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from apps.base.models import *
 from django.http import HttpResponse
-
+# My views
 
 # Create your views here.
 def index(request):
