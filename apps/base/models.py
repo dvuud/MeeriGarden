@@ -1,6 +1,7 @@
 from django.db import models
 
 # Create your models here.
+# My models
 
 class About(models.Model):
     title = models.CharField(
