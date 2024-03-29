@@ -19,8 +19,8 @@
     <section class="team section-padding bg-cream">
         <div class="container">
             <div class="row">
+                {%for commands in commands%}
                 <div class="col-md-4">
-            {%for commands in commands%}
                     <div class="item">
                         <div class="img"> <img src="{{commands.img.url}}" alt=""> </div>
                         <div class="info">
@@ -36,7 +36,8 @@
                             </div>
                         </div>
                     </div>
-                    {%endfor%}
+                </div>
+                {%endfor%}
             </section>
 
 {% include 'include/footer.html'%}

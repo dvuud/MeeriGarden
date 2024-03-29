@@ -55,31 +55,33 @@
                         <div class="facility-shape"> <span class="flaticon-world"></span> </div>
                     </div>
                 </div>
-                {%endfor%}
+            {%endfor%}
     </section>
     <!-- Services -->
     <section class="services">
         <div class="container">
-            {%for services in services%}
+            {% for service in services%}
             <div class="row">
                 <div class="col-md-6 p-0 animate-box" data-animate-effect="fadeInLeft">
                     <div class="img left brl-20">
-                        <a href="#"><img src="{{banner.img.url}}" alt=""></a>
+                        <a href="#"><img src="{{banner.image.url}}" alt=""></a>
                     </div>
                 </div>
                 <div class="col-md-6 p-0 bg-cream valign animate-box brr-20" data-animate-effect="fadeInRight">
                     <div class="content">
                         <div class="cont text-left">
-                            <h4>{{services.title}}</h4>
-                            <p>{{services.description}}<p>
-                            <div class="butn-dark br-20"> <a href="#"><span>Заказать услугу</span></a> </div>
-                            {%endfor%}
+                            <h4>{{service.title}}</h4>
+                            <p>{{service.descriptions}}</p>
+                            <div class="butn-dark br-20"> <a href="#testimonials"><span>Заказать услугу</span></a> </div>
                         </div>
                     </div>
                 </div>
-        </section>
+            </div>
+            {% endfor%}
+        </div>
+    </section>
     <!-- Promo Video -->
-    <section class="video-wrapper video section-padding bg-img bg-fixed" data-overlay-dark="3"
+<section class="video-wrapper video section-padding bg-img bg-fixed" data-overlay-dark="3"
     data-background="{% static 'img/merrigarden/banner/1.jpg' %}">
     <div class="container">
         <div class="row">
@@ -90,7 +92,7 @@
         </div>
         <div class="row">
             <div class="text-center col-md-12">
-                <a class="vid" href="{{about.video}}">
+                <a class="vid" href="{{about.video.url}}">
                     <div class="vid-butn">
                         <span class="icon">
                             <i class="ti-control-play"></i>
@@ -101,6 +103,7 @@
         </div>
     </div>
 </section>
+
 {% include 'include/footer.html' %} 
     
 

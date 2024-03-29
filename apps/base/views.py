@@ -5,6 +5,10 @@ from django.http import HttpResponse
 
 # Create your views here.
 def index(request):
+    try:
+        about = About.objects.latest("id")
+    except About.DoesNotExist:
+        about = None    
     banner = Banner.objects.all()
     footer = Footer.objects.latest("id")
     facilties = Facilties.objects.all()
