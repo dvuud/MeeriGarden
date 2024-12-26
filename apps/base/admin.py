@@ -16,8 +16,6 @@ admin.site.register(News_item)
 admin.site.register(Commands)
 admin.site.register(Post)
 admin.site.register(Banner, BannerFilter)
-admin.site.register(Facilties)
-admin.site.register(Services)
 admin.site.register(Footer)
 
 

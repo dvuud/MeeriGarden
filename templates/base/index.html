@@ -35,51 +35,32 @@
             </a>
         </div>
     </header>
-        
-    <!-- Facilties -->
-    <section class="facilties pt-60">
-        <div class="container">
-            {%for facilities in facilities%}
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="section-subtitle"></div>
-                    <div class="section-title">Услуги</div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="single-facility animate-box br-20" data-animate-effect="fadeInUp">
-                        <span class="flaticon-world"></span>
-                        <h5>{{facilties.title}}</h5>
-                        <p>{{facilities.description}}</p>
-                        <div class="facility-shape"> <span class="flaticon-world"></span> </div>
-                    </div>
-                </div>
-            {%endfor%}
-    </section>
-    <!-- Services -->
-    <section class="services">
-        <div class="container">
-            {% for service in services%}
-            <div class="row">
-                <div class="col-md-6 p-0 animate-box" data-animate-effect="fadeInLeft">
-                    <div class="img left brl-20">
-                        <a href="#"><img src="{{banner.image.url}}" alt=""></a>
-                    </div>
-                </div>
-                <div class="col-md-6 p-0 bg-cream valign animate-box brr-20" data-animate-effect="fadeInRight">
-                    <div class="content">
-                        <div class="cont text-left">
-                            <h4>{{service.title}}</h4>
-                            <p>{{service.descriptions}}</p>
-                            <div class="butn-dark br-20"> <a href="#testimonials"><span>Заказать услугу</span></a> </div>
+<section class="rooms1 section-padding bg-cream" data-scroll-index="1">
+    <div class="container">
+        <div class="row">
+             {% for news_item in news %}
+            <div class="col-md-4">
+                <div class="item br-20">
+                    <div class="position-re o-hidden"><img src="{{news_item.img.url}}" alt="Merry Garden"></div>
+                    <div class="con">
+                        <h5><a href=" {% url 'news_detail' news_item.id %} ">{{news_item.title}}</a></h5>
+                        <div class="line"></div>
+                        <div class="row facilities">
+                            <div class="col col-md-5 text-end">
+                                <div class="permalink">
+                                    <a href=" {% url 'news_detail' news_item.id %} ">
+                                        Подробнее <i class="ti-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            {% endfor%}
-        </div>
-    </section>
+            {% endfor %}
+            </div>
+    </div>
+</section>
     <!-- Promo Video -->
 <section class="video-wrapper video section-padding bg-img bg-fixed" data-overlay-dark="3"
     data-background="{% static 'img/merrigarden/banner/1.jpg' %}">

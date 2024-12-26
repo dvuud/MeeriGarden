@@ -11,8 +11,7 @@ def index(request):
         about = None    
     banner = Banner.objects.all()
     footer = Footer.objects.latest("id")
-    facilties = Facilties.objects.all()
-    services = Services.objects.all()
+    news = News_item.objects.all()
     if request.method == 'POST':
         fullname = request.POST.get("fullname")
         phone = request.POST.get("phone")
