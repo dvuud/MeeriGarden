@@ -132,4 +132,5 @@ MEDIA_ROOT = BASE_DIR / 'media'
 # вв
 # врпарпра
 # jfdjfjd
+# dhsdhjghsd
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
