@@ -131,7 +131,7 @@ MEDIA_ROOT = BASE_DIR / 'media'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 # вв
 врпарпра
-# jfdjfjd
+jfdjfjd
 # dhsdhjghsd
 # djsdjsdj
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
